@@ -1,0 +1,74 @@
+
+
+  <div class="container col-xl-10 col-xxl-8 ">
+    <div class="row  g-lg-5 py-5">
+        
+      <div class="col-lg-6 text-center text-lg-start mb-5">
+        <img src="/assets/logo.png" width="150px" height="150px">
+        <h1 class="display-4 fw-bold lh-1 mb-3">Digital Books</h1>
+        <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+      </div>
+      <div class="col-md-10 mx-auto col-lg-6">
+        <form class="p-4 p-md-5 border rounded-3 bg-light">
+
+                      
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="booktitle" name="title" [(ngModel)]="book.title" placeholder="Book Title">
+                <label for="booktitle">Book Title</label>
+              </div>
+
+              <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="category" name="category" [(ngModel)]="book.category" placeholder="Book Category">
+                <label for="category">Book Category</label>
+              </div>
+              
+              <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" [(ngModel)]="book.logo" name="logo" id="logo" placeholder="Logo URL">
+                <label for="logo">Logo URL</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="book.price" name="price" id="price" placeholder="Book Price">
+                <label for="price">Book Price</label>
+              </div>
+           
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="book.author" name="author" id="author" placeholder="Author Name">
+                <label for="author">Author Name</label>
+              </div>
+
+              
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="book.publisher"  name="publisher" id="publisher" placeholder="Publisher Name">
+                <label for="publisher">Publisher Name</label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" [(ngModel)]="book.publishedDate" name="publishedDate" id="publishedDate" placeholder="Published Date">
+                <label for="publishedDate">Published Date</label>
+              </div>
+
+              <!-- <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="isactive" name="active" [(ngModel)]="book.active" placeholder="Active">
+                <label for="isactive">Active</label>
+              </div> -->
+              <div class="checkbox mb-3">
+                <label>
+                  <input type="checkbox" value="false" id="isactive" name="active" [(ngModel)]="book.active"> Mark this book as active
+                </label>
+              </div>
+
+              <div class="form-floating mb-3">
+                <textarea class="form-control" rows="10" id="content" name="content" [(ngModel)]="book.content" placeholder="Book Content"></textarea>                
+                <label for="content">Book Content</label>
+              </div>
+
+            
+          <button class="w-100 btn btn-lg btn-primary" (click)="saveBook()" type="submit">Save Book</button>
+          <hr class="my-4">
+          
+        </form>
+      </div>
+    </div>
+  </div>

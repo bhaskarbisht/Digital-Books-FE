@@ -11,6 +11,9 @@ import { BestsellersComponent } from './components/homepage/bestsellers/bestsell
 import { FooterComponent } from './components/homepage/footer/footer.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
+import { CreatebookComponent } from './components/createbook/createbook.component';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { LoginComponent } from './components/login/login.component';
     BestsellersComponent,
     FooterComponent,
     SignupComponent,
-    LoginComponent
+    LoginComponent,
+    CreatebookComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
