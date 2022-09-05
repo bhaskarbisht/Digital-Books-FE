@@ -11,38 +11,44 @@
       <div class="col-md-10 mx-auto col-lg-6">
         <form class="p-4 p-md-5 border rounded-3 bg-light">
 
-            <div class="form-floating mb-3 mt-3">
+            <!-- <div class="form-floating mb-3 mt-3 form-control ">
  
-                <select name="signupas" id="signupas" class="form-control " >
+                <select name="signupas" id="signupas" class="" >
                     <option value="Author">Signup as</option>
                     <option value="Author">Author</option>
                   <option value="Reader">Reader</option>
                 </select>
                             
+              </div> -->
+            
+              <div class="form-floating mb-3 mt-3">
+                <select name="signupas" id="signupas" [(ngModel)]="user.signUpAs" class="form-control" >
+                  <option value="Author"></option>
+                  <option value="1">Author</option>
+                <option value="2">Reader</option>
+              </select>
+                <label for="signupas">Signup as</label>
               </div>
-            
-
-            
               
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="firstname" placeholder="First Name">
+                <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="user.firstName"  placeholder="First Name">
                 <label for="firstname">First Name</label>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+                <input type="text" class="form-control" id="lastname" name="lastname" [(ngModel)]="user.lastName" placeholder="Last Name">
                 <label for="lastname">Last Name</label>
               </div>
            
             <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-            <label for="floatingInput">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="user.email" placeholder="name@example.com">
+            <label for="email">Email address</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+            <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" placeholder="Password">
+            <label for="password">Password</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Password">
+            <input type="password" class="form-control" id="confirmPassword"  name="confirmPassword"  placeholder="Confirm Password">
             <label for="confirmPassword"> Confirm Password</label>
           </div>
           <div class="checkbox mb-3">
@@ -50,10 +56,12 @@
               <input type="checkbox" value="remember-me"> Remember me
             </label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+          <button class="w-100 btn btn-lg btn-primary" (click)="registerUser()" type="submit">Sign up</button>
           <hr class="my-4">
           <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
         </form>
       </div>
     </div>
   </div>
+  <hr class=" container my-4">
+  <app-footer></app-footer>

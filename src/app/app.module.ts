@@ -14,6 +14,7 @@ import { LoginComponent } from './components/login/login.component';
 import { CreatebookComponent } from './components/createbook/createbook.component';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import {HttpClientModule} from '@angular/common/http';
     SignupComponent,
     LoginComponent,
     CreatebookComponent,
+    AboutusComponent,
   ],
   imports: [
     BrowserModule,
