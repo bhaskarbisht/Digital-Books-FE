@@ -9,12 +9,26 @@ import Books from 'src/app/Entity/Books';
 })
 export class CreatebookComponent implements OnInit {
   book: Books = new Books();
+  userData: any = history.state.data;
+  uploadedImage: File;
+  firstName:string=JSON.parse(sessionStorage.getItem('firstname')); 
+  lastName:string=JSON.parse(sessionStorage.getItem('lastname'));     
+
+  public onImageUpload(event) {
+    this.uploadedImage = event.target.files[0];
+  }
 
   saveBook() {
-    const observable = this.createbookservice.createBook(this.book);
+    // this.book.authorId = this.userData.userId;
+    this.book.authorId =JSON.parse(sessionStorage.getItem('userId'));   
+    const observable = this.createbookservice.createBook(
+      this.book,
+      this.uploadedImage
+    );
     observable.subscribe(
       (response: any) => {
         console.log(response);
+        alert('book saved successfully');
       },
       function (error) {
         console.log(error);
@@ -23,7 +37,32 @@ export class CreatebookComponent implements OnInit {
     );
   }
 
+  resetStorage(){
+    sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('firstName');
+    sessionStorage.removeItem('lastName');
+
+
+
+  }
+
   constructor(public createbookservice: CreatebookService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if(sessionStorage.getItem('userId')){
+        console.log("already present data");
+        //this.resetStorage();
+
+    }
+    else{
+      this.firstName=this.userData.firstName;
+      this.lastName=this.userData.lastName
+
+    sessionStorage.setItem("userId",JSON.stringify(this.userData.userId));
+    sessionStorage.setItem("firstname",JSON.stringify(this.userData.firstName));
+    sessionStorage.setItem("lastname",JSON.stringify(this.userData.lastName));
+    console.log("data set to session");
+    }
+  
+  }
 }

@@ -15,6 +15,9 @@ import { CreatebookComponent } from './components/createbook/createbook.componen
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { CreateheaderComponent } from './components/createbook/createheader/createheader.component';
+import { AuthorbooksComponent } from './components/createbook/authorbooks/authorbooks.component';
+import { LogoutComponent } from './components/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +32,9 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
     LoginComponent,
     CreatebookComponent,
     AboutusComponent,
+    CreateheaderComponent,
+    AuthorbooksComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,

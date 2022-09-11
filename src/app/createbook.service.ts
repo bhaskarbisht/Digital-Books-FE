@@ -1,26 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import Books from './Entity/Books';
 
-const BASE_URL="http://localhost:9001/savebook";
+const BASE_URL = 'http://localhost:9001/savebook';
+const BASE_URL_GET_BOOKS='http://localhost:9001/books';
+const BASE_URL_GET_BOOKS_BY_AUTH_ID='http://localhost:9001/book/author/'
 
 @Injectable({
   providedIn: 'root',
 })
 export class CreatebookService {
-  createBook(book: {
-    authorId: number;
-    logo: string;
-    title: string;
-    category: string;
-    price: number;
-    author: string;
-    publisher: string;
-    publishedDate: string;
-    active: boolean;
-    content: string;
-  }){
-    return this.http.post(BASE_URL,book);
+  createBook(book: Books, uploadedImage: File) {
+    const formData = new FormData();
+    formData.append('bookstring', JSON.stringify(book));
+
+    formData.append('image', uploadedImage);
+
+    return this.http.post(BASE_URL, formData);
   }
 
-  constructor(public http:HttpClient) {}
+
+  getBooks(){
+    return this.http.get(BASE_URL_GET_BOOKS);
+  }
+
+  getBooksByauthorId(authorId:number){
+    
+    return this.http.get(BASE_URL_GET_BOOKS_BY_AUTH_ID+authorId);
+  }
+  
+
+  constructor(public http: HttpClient) {}
 }

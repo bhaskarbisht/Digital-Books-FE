@@ -1,0 +1,30 @@
+<app-createheader></app-createheader>
+
+
+
+<!-- cardview -->
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let book of books">
+      <div class="card text-bg-success text-center">
+        <img src="http://localhost:9001/download/?image={{book.logo}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Title:{{book.title}}</h5>
+          
+          <div class="row">
+            <div class="col text-start">{{book.publishedDate}}</div>
+            <div class="col text-end">{{book.publisher}}</div>
+          </div>
+          <div class="row">
+            <div class="col text-start">price:{{book.price}}</div>
+            <div class="col text-end">Active:{{book.active}}</div>
+
+          </div>
+         
+        </div>
+        <div class="card-footer bg-transparent ">Footer</div>
+      </div>
+      
+    </div>
+</div>
+

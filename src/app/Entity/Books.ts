@@ -1,5 +1,5 @@
 export default class Books{
-    authorId:number=1;
+    authorId:number=0;
     logo:string='';
     title:string='';
     category:string='';

@@ -12,26 +12,46 @@ export class LoginComponent implements OnInit {
 
 
   user:RegisterUser=new RegisterUser();
-  loginresponse:number;
+  returneduser:RegisterUser=new RegisterUser();
 
   loginUser(){
     const observable = this.loginuserservice.LoginUser(this.user);
     observable.subscribe(
       (response: any) => {
-        console.log(response);
-       this.loginresponse=response;
-       if(this.loginresponse==5){
-        alert("Please check your password");
-       }
-       else if(this.loginresponse==0){
-        alert("invalid User");
-       }
-       else{
-        alert("Login Successfull");
-        this.route.navigate(['/createbook']);
-       }
+       this.returneduser=response as RegisterUser;
+          console.log(this.returneduser);
+
+          if(this.returneduser==null){
+            alert("null");
+          }
+          else{
+            alert("Login Successfull");
+
+            if(this.returneduser.signUpAs==1){
+              console.log("author");
+              this.route.navigate(['/createbook'],{state:{data:this.returneduser}});
+            }
+            else if(this.returneduser.signUpAs==2){
+              console.log("reader");
+
+            }
+          }
+
+      //  if(this.loginresponse==5){
+      //   alert("Please check your password");
+      //  }
+      //  else if(this.loginresponse==0){
+      //   alert("invalid User");
+      //  }
+      //  else{
+      //   alert("Login Successfull");
+      //   this.route.navigate(['/createbook']);
+      //  }
       
+
+
       },
+      
       function (error) {
         console.log(error);
         alert('User not Login');

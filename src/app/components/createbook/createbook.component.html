@@ -1,5 +1,5 @@
 
-
+<app-createheader></app-createheader>
   <div class="container col-xl-10 col-xxl-8 ">
     <div class="row  g-lg-5 py-5">
         
@@ -9,11 +9,13 @@
         <p class="col-lg-10 fs-4">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
       </div>
       <div class="col-md-10 mx-auto col-lg-6">
-        <form class="p-4 p-md-5 border rounded-3 bg-light">
-
+        <div class="text-center text-white border rounded-3 bg-primary "> Welcome {{firstName}} {{lastName}}</div>
+        <form class="p-4 p-md-5 border rounded-3 bg-light" >
+         
+        <h3 class="text-center text-dark"> Provide Your latest Book Details</h3>
                       
             <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" id="booktitle" name="title" [(ngModel)]="book.title" placeholder="Book Title">
+                <input type="text" required class="form-control" id="booktitle" name="title" [(ngModel)]="book.title" placeholder="Book Title">
                 <label for="booktitle">Book Title</label>
               </div>
 
@@ -22,9 +24,11 @@
                 <label for="category">Book Category</label>
               </div>
               
-              <div class="form-floating mb-3 mt-3">
-                <input type="text" class="form-control" [(ngModel)]="book.logo" name="logo" id="logo" placeholder="Logo URL">
-                <label for="logo">Logo URL</label>
+          
+
+              <div class=" mb-3 ">
+
+                <input class="form-control" [(ngModel)]="book.logo" name="logo" id="logo"  type="file" (change)="onImageUpload($event)">
               </div>
 
               <div class="form-floating mb-3">
@@ -45,14 +49,11 @@
               </div>
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" [(ngModel)]="book.publishedDate" name="publishedDate" id="publishedDate" placeholder="Published Date">
+                <input type="date" class="form-control" [(ngModel)]="book.publishedDate" name="publishedDate" id="publishedDate" placeholder="Published Date">
                 <label for="publishedDate">Published Date</label>
               </div>
 
-              <!-- <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="isactive" name="active" [(ngModel)]="book.active" placeholder="Active">
-                <label for="isactive">Active</label>
-              </div> -->
+             
               <div class="checkbox mb-3">
                 <label>
                   <input type="checkbox" value="false" id="isactive" name="active" [(ngModel)]="book.active"> Mark this book as active
@@ -67,7 +68,7 @@
             
           <button class="w-100 btn btn-lg btn-primary" (click)="saveBook()" type="submit">Save Book</button>
           <hr class="my-4">
-          
+         
         </form>
       </div>
     </div>
