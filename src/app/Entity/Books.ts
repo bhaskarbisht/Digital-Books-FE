@@ -1,4 +1,5 @@
 export default class Books{
+    bookId:number;
     authorId:number=0;
     logo:string='';
     title:string='';

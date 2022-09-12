@@ -22,9 +22,72 @@
           </div>
          
         </div>
-        <div class="card-footer bg-transparent ">Footer</div>
+        <div class="card-footer bg-transparent ">
+          <button class="btn btn-danger"  (click)="deleteBook(book.bookId)" >Delete</button>
+          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updatemodal" (click)="editbook(book)"> Edit</button>
+        </div>
       </div>
       
     </div>
 </div>
 
+<!-- update records Modal -->
+<div class="modal fade" id="updatemodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title " id="exampleModalLabel">Update Your Book</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+        <form class="p-4 p-md-4 border rounded-3 bg-light" >
+                               
+              <div class="form-floating mb-3 mt-3">
+                  <input type="text" required class="form-control" id="booktitle" disabled [(ngModel)]="fillBook.title"  name="title"  placeholder="Book Title">
+                  <label for="booktitle">Book Title</label>
+                </div>
+  
+                <div class="form-floating mb-3 mt-3">
+                  <input type="text" class="form-control" id="category" name="category" disabled [(ngModel)]="fillBook.category" placeholder="Book Category">
+                  <label for="category">Book Category</label>
+                </div>
+                
+            
+  
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" [(ngModel)]="fillBook.price"  name="price" id="price" placeholder="Book Price">
+                  <label for="price">Book Price</label>
+                </div>
+             
+  
+      
+                
+                <div class="form-floating mb-3">
+                  <input type="text" class="form-control" [(ngModel)]="fillBook.publisher" disabled name="publisher" id="publisher" placeholder="Publisher Name">
+                  <label for="publisher">Publisher Name</label>
+                </div>
+  
+                <div class="form-floating mb-3">
+                  <input type="date" class="form-control" [(ngModel)]="fillBook.publishedDate" disabled name="publishedDate" id="publishedDate" placeholder="Published Date">
+                  <label for="publishedDate">Published Date</label>
+                </div>
+               
+                <div class="checkbox mb-3">
+                  <label>
+                    <input type="checkbox" value="false" id="isactive" [(ngModel)]="fillBook.active" name="active" > Mark this book as active
+                  </label>
+                </div>
+  
+            <button class="w-100 btn btn-lg btn-primary" (click)="updateBook(fillBook.bookId)" type="submit">Update Book</button>
+            <button class="w-100 btn btn-lg btn-success mt-2" data-bs-dismiss="modal"  type="submit">Close </button>
+
+            <hr class="my-4">
+           
+          </form>
+
+      </div>
+      
+    </div>
+  </div>
+</div>

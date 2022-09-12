@@ -38,7 +38,7 @@
            
 
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" [(ngModel)]="book.author" name="author" id="author" placeholder="Author Name">
+                <input type="text" class="form-control" [(ngModel)]=authorName disabled name="author" id="author" placeholder="Author Name">
                 <label for="author">Author Name</label>
               </div>
 
@@ -49,10 +49,9 @@
               </div>
 
               <div class="form-floating mb-3">
-                <input type="date" class="form-control" [(ngModel)]="book.publishedDate" name="publishedDate" id="publishedDate" placeholder="Published Date">
+                <input type="date" class="form-control" [(ngModel)]="book.publishedDate"  name="publishedDate" id="publishedDate" placeholder="Published Date">
                 <label for="publishedDate">Published Date</label>
               </div>
-
              
               <div class="checkbox mb-3">
                 <label>

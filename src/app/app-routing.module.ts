@@ -6,6 +6,7 @@ import { CreatebookComponent } from './components/createbook/createbook.componen
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ReadbookComponent } from './components/readbook/readbook.component';
 import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
@@ -15,7 +16,8 @@ const routes: Routes = [
   {path:'home',component:HomepageComponent},
   {path:'createbook',component:CreatebookComponent},
   {path:'mybooks',component:AuthorbooksComponent},
-  {path:'logout',component:LogoutComponent}
+  {path:'logout',component:LogoutComponent},
+  {path:'reader',component:ReadbookComponent}
 
 
     

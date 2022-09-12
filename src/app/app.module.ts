@@ -18,6 +18,8 @@ import { AboutusComponent } from './components/aboutus/aboutus.component';
 import { CreateheaderComponent } from './components/createbook/createheader/createheader.component';
 import { AuthorbooksComponent } from './components/createbook/authorbooks/authorbooks.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ReadbookComponent } from './components/readbook/readbook.component';
+import { ReadheaderComponent } from './components/readbook/readheader/readheader.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { LogoutComponent } from './components/logout/logout.component';
     CreateheaderComponent,
     AuthorbooksComponent,
     LogoutComponent,
+    ReadbookComponent,
+    ReadheaderComponent,
   ],
   imports: [
     BrowserModule,

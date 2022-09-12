@@ -33,21 +33,10 @@ export class LoginComponent implements OnInit {
             }
             else if(this.returneduser.signUpAs==2){
               console.log("reader");
+              this.route.navigate(['/reader']);
 
             }
           }
-
-      //  if(this.loginresponse==5){
-      //   alert("Please check your password");
-      //  }
-      //  else if(this.loginresponse==0){
-      //   alert("invalid User");
-      //  }
-      //  else{
-      //   alert("Login Successfull");
-      //   this.route.navigate(['/createbook']);
-      //  }
-      
 
 
       },

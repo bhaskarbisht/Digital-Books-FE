@@ -13,6 +13,9 @@ export class CreatebookComponent implements OnInit {
   uploadedImage: File;
   firstName:string=JSON.parse(sessionStorage.getItem('firstname')); 
   lastName:string=JSON.parse(sessionStorage.getItem('lastname'));     
+   authorName:string;
+  
+  
 
   public onImageUpload(event) {
     this.uploadedImage = event.target.files[0];
@@ -21,6 +24,7 @@ export class CreatebookComponent implements OnInit {
   saveBook() {
     // this.book.authorId = this.userData.userId;
     this.book.authorId =JSON.parse(sessionStorage.getItem('userId'));   
+   this.book.author=this.authorName;
     const observable = this.createbookservice.createBook(
       this.book,
       this.uploadedImage
@@ -57,11 +61,13 @@ export class CreatebookComponent implements OnInit {
     else{
       this.firstName=this.userData.firstName;
       this.lastName=this.userData.lastName
+     this.authorName=this.firstName+" "+this.lastName;
 
     sessionStorage.setItem("userId",JSON.stringify(this.userData.userId));
     sessionStorage.setItem("firstname",JSON.stringify(this.userData.firstName));
     sessionStorage.setItem("lastname",JSON.stringify(this.userData.lastName));
     console.log("data set to session");
+    
     }
   
   }
