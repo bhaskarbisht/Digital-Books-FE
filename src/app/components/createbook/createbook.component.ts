@@ -12,8 +12,9 @@ export class CreatebookComponent implements OnInit {
   userData: any = history.state.data;
   uploadedImage: File;
   firstName:string=JSON.parse(sessionStorage.getItem('firstname')); 
-  lastName:string=JSON.parse(sessionStorage.getItem('lastname'));     
-   authorName:string;
+  lastName:string=JSON.parse
+  (sessionStorage.getItem('lastname'));     
+   authorName:string=this.firstName+" "+this.lastName;
   
   
 

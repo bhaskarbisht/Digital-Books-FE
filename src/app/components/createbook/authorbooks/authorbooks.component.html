@@ -1,14 +1,15 @@
 <app-createheader></app-createheader>
 
 
-
+<br>
+<br>
 <!-- cardview -->
-<div class="container">
-  <div class="row row-cols-1 row-cols-md-4 g-4">
+<div class="container-fluid bg-light" >
+  <div class="row row-cols-1 row-cols-md-5 g-4">
     <div class="col" *ngFor="let book of books">
-      <div class="card text-bg-success text-center">
+      <div class="card  text-center">
         <img src="http://localhost:9001/download/?image={{book.logo}}" class="card-img-top" alt="...">
-        <div class="card-body">
+        <div class="card-body grad">
           <h5 class="card-title">Title:{{book.title}}</h5>
           
           <div class="row">
@@ -24,7 +25,7 @@
         </div>
         <div class="card-footer bg-transparent ">
           <button class="btn btn-danger"  (click)="deleteBook(book.bookId)" >Delete</button>
-          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updatemodal" (click)="editbook(book)"> Edit</button>
+          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updatemodal" (click)="editbook(book)"> Update</button>
         </div>
       </div>
       
@@ -91,3 +92,5 @@
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>
