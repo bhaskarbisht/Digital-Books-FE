@@ -4,7 +4,7 @@
 <br>
 <br>
 <!-- cardview -->
-<div class="container-fluid bg-light" >
+<div class="container-fluid bg-light signupform" >
   <div class="row row-cols-1 row-cols-md-5 g-4">
     <div class="col" *ngFor="let book of books">
       <div class="card  text-center">
@@ -24,8 +24,9 @@
          
         </div>
         <div class="card-footer bg-transparent ">
-          <button class="btn btn-danger"  (click)="deleteBook(book.bookId)" >Delete</button>
-          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updatemodal" (click)="editbook(book)"> Update</button>
+          <button class="btn btn-danger me-2"  (click)="deleteBook(book.bookId)"  ><i class="bi bi-trash">Delete</i></button>
+
+          <button class="btn btn-primary " data-bs-toggle="modal" data-bs-target="#updatemodal" (click)="editbook(book)"> <i class="bi bi-pen">Update</i></button>
         </div>
       </div>
       

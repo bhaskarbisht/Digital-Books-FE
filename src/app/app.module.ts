@@ -20,6 +20,8 @@ import { AuthorbooksComponent } from './components/createbook/authorbooks/author
 import { LogoutComponent } from './components/logout/logout.component';
 import { ReadbookComponent } from './components/readbook/readbook.component';
 import { ReadheaderComponent } from './components/readbook/readheader/readheader.component';
+import { CartComponent } from './components/readbook/cart/cart.component';
+import { PurchasedbookComponent } from './components/readbook/purchasedbook/purchasedbook.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { ReadheaderComponent } from './components/readbook/readheader/readheader
     LogoutComponent,
     ReadbookComponent,
     ReadheaderComponent,
+    CartComponent,
+    PurchasedbookComponent,
   ],
   imports: [
     BrowserModule,

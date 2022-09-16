@@ -1,0 +1,32 @@
+<app-readheader></app-readheader>
+
+<br>
+<br>
+<!-- cardview -->
+<div class="container-fluid bg-light topmargin" >
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col" *ngFor="let book of books">
+      <div class="card ">
+        <img src="http://localhost:9001/download/?image={{book.logo}}" class="card-img-top" alt="...">
+        <div class="card-body grad">
+          <h5 class="card-title">{{book.title}}</h5>
+          
+          <div>Author: {{book.author}}</div>
+          <div>Publisher: {{book.publisher}}</div>
+          <div >
+            <button class="btn btn-warning mb-2"    ><i class="bi bi-stopwatch"></i>Refund</button>
+  
+          </div>
+        </div>
+        <div class="card-footer text-dark">
+           {{book.content}}
+          </div>
+       
+      </div>
+      
+    </div>
+</div>
+
+
+
+<app-footer></app-footer>

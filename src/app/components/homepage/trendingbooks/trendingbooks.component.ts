@@ -15,10 +15,6 @@ export class TrendingbooksComponent implements OnInit {
 
   
 
-
-
-  
-
   constructor(private readbookservice:ReadbookService) { }
 
   ngOnInit(): void {
@@ -26,6 +22,8 @@ export class TrendingbooksComponent implements OnInit {
     promise.subscribe((response) => {
       this.books = response as Books[];
       console.log(this.books);
+      this.books = this.books.filter(item => (item.active == true));
+
     
       this.bookslength=this.books.length/3;
      this.trendingauthors=this.books.splice(0,this.bookslength);

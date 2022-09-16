@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
           console.log(this.returneduser);
 
           if(this.returneduser==null){
-            alert("null");
+            alert("User Not Found");
           }
           else{
             alert("Login Successfull");
@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
             }
             else if(this.returneduser.signUpAs==2){
               console.log("reader");
-              this.route.navigate(['/reader']);
+              this.route.navigate(['/reader'],{state:{data:this.returneduser}});
 
             }
           }
