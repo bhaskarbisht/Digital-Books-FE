@@ -5,7 +5,7 @@
     <div class="col" *ngFor="let book of books">
       <div class="card">
         <img
-          src="http://localhost:9001/download/?image={{ book.logo }}"
+          src="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9001/download/?image={{ book.logo }}"
           class="card-img-top"
           alt="..."
         />
@@ -35,7 +35,7 @@
     <div class="col" *ngFor="let book of trendingauthors">
       <div class="card text-start">
         <img
-          src="http://localhost:9001/download/?image={{ book.logo }}"
+        src="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9001/download/?image={{ book.logo }}"
           class="card-img-top"
           alt="..."
         />
@@ -66,7 +66,7 @@
     <div class="col" *ngFor="let book of bestsellers">
       <div class="card text-start">
         <img
-          src="http://localhost:9001/download/?image={{ book.logo }}"
+        src="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9001/download/?image={{ book.logo }}"
           class="card-img-top"
           alt="..."
         />

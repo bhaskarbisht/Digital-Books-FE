@@ -8,7 +8,7 @@
   <div class="row row-cols-1 row-cols-md-5 g-4">
     <div class="col" *ngFor="let book of books">
       <div class="card  text-center">
-        <img src="http://localhost:9001/download/?image={{book.logo}}" class="card-img-top" alt="...">
+        <img src="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9001/download/?image={{ book.logo }}" class="card-img-top" alt="...">
         <div class="card-body grad">
           <h5 class="card-title">Title:{{book.title}}</h5>
           

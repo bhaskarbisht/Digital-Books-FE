@@ -8,6 +8,7 @@ import Books from 'src/app/Entity/Books';
   styleUrls: ['./createbook.component.css'],
 })
 export class CreatebookComponent implements OnInit {
+  bookAlert=false;
   book: Books = new Books();
   userData: any = history.state.data;
   uploadedImage: File;
@@ -33,7 +34,7 @@ export class CreatebookComponent implements OnInit {
     observable.subscribe(
       (response: any) => {
         console.log(response);
-        alert('book saved successfully');
+       this.bookAlert=true;
       },
       function (error) {
         console.log(error);

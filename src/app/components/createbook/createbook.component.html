@@ -68,7 +68,11 @@
               </div>
 
             
-          <button class="w-100 btn btn-lg btn-primary" (click)="saveBook()" type="submit">Save Book</button>
+          <button class="w-100 btn btn-lg btn-primary mb-3" (click)="saveBook()" type="submit">Save Book</button>
+          <div class="alert alert-success" role="alert" *ngIf="bookAlert">
+            Book Added Successfully!!!Please check in My books Section
+          </div>
+       
           <hr class="my-4">
          
         </form>

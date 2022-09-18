@@ -21,7 +21,7 @@
       <td>{{book.title}}</td>
       <td>{{book.author}}</td>
       <td>{{today|date}}</td>
-      <td><img src="http://localhost:9001/download/?image={{ book.logo }}"></td>
+      <td><img src="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9001/download/?image={{ book.logo }}"></td>
       <td>{{book.price|currency: "INR":"symbol":"1.0-0"}}</td>
       <td>{{book.quantity}}</td>
       <td>{{book.total}}</td>

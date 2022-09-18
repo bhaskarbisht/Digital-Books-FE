@@ -10,13 +10,15 @@ import { RegisterUserService } from 'src/app/registeruser.service';
 export class SignupComponent implements OnInit {
 
   user:RegisterUser=new RegisterUser();
+  Signupalert="Registered Successfully please Login  to continue!!";
+  showAlert=false;
 
   registerUser(){
     const observable = this.registeruserservice.registerUser(this.user);
     observable.subscribe(
       (response: any) => {
         console.log(response);
-        alert("User Registered Successfully");
+        this.showAlert=true;
       },
       function (error) {
         console.log(error);

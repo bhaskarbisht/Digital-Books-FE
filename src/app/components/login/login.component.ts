@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
           console.log(this.returneduser);
 
           if(this.returneduser==null){
-            alert("User Not Found");
+            alert("Please check username and password");
           }
           else{
             alert("Login Successfull");

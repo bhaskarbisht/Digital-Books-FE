@@ -3,7 +3,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import Purchase from './Entity/Purchase';
 
-const PURCHASE_URL="http://localhost:9002/purchase";
+// const PURCHASE_URL="http://localhost:9002/purchase";
+
+const PURCHASE_URL="http://ec2-54-201-112-78.us-west-2.compute.amazonaws.com:9002/purchase";
+
+
 
 @Injectable({
   providedIn: 'root'
